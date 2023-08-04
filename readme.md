@@ -11,11 +11,11 @@ My attempt to create unique videos especially for TikTok.
 
 ## Implemented
 
-[x] Remove metadata
-[x] Remove audio
-[x] Zoom
-[ ] Add fake metadata
-[ ] Change image width/height
+- [x] Remove metadata
+- [x] Remove audio
+- [x] Zoom
+- [ ] Add fake metadata
+- [ ] Change image width/height
 
 - Major Brand (this one is not important i guess)
 - Minor Version (this one is not important i guess)

@@ -14,18 +14,40 @@ My attempt to create unique videos especially for TikTok.
 - [x] Remove metadata
 - [x] Remove audio
 - [x] Zoom
-- [ ] Add fake metadata
-- [ ] Change image width/height
+- [x] Add fake metadata
+- [x] Change image width/height to tiktok's standard
 
-- Major Brand (this one is not important i guess)
-- Minor Version (this one is not important i guess)
-- Compatible Brands (this one is not important i guess)
-- Create Date : 0000:00:00 00:00:00 (IMPORTANT)
-- Modify Date : 0000:00:00 00:00:00 (IMPORTANT)
-- Next Track ID (could be important idk)
-- Handler Type: Metadata (Metadata tags) (IMPORTANT)
-- Image width is now the same as original. This should be changed to 1080x1920
-- Lv Meta Info : {"data":{"os":"web","videoId":"8cBtNeTkL5kFM6cYlhdhGXLqqcUehvP16AtaJnr","product":"vicutweb","editType":"edit","exportType":"export","original_edittype":"edit","templateId":"","appVersion":"10.5.0"},"source_type":"vicutweb"}
-- Hw : 1.
-- Te Is Reencode : 1.
-- Balance : 0
+### TikTok In-App Metadata
+
+- [x] Create Date: 2023:08:05 07:35:47
+- [x] Modify Date: 2023:08:05 07:35:47
+- [x] Track Create Date: 2023:08:05 07:35:47
+- [x] Track Modify Date: 2023:08:05 07:35:47
+- [x] Media Create Date: 2023:08:05 07:35:47
+- [x] Media Modify Date: 2023:08:05 07:35:47
+- [x] Handler Type: Metadata Tags
+- [x] Handler Description: DataHandler
+- [x] Audio Format: mp4a
+- [x] Audio Bits Per Sample: 16
+- [x] Audio Sample Rate: 44100
+- [x] Compressor ID: hvc1
+- [x] Vendor ID: FFmpeg
+- [ ] Handler Vendor ID: (appears to be not writable)
+- [x] Balance: 0
+- [x] Purchase File Format: mp4a
+- [x] Layout Flags: Stereo
+- [x] Audio Channels: 2
+- [x] Writer Type: -1
+- [x] Copyright: cb2e8b799d13edf6c2e5b21baa16c737
+- [x] Mdat Pos: 28
+- [x] Minor Version: 512
+- [x] Encoder: Lavf57.71.100
+- [x] Software: {"publicMode":"1","TEEditor":"2","isFastImport":"0","transType":"2","te_is_reencode":"1","source":"2"}
+- [x] Source: 2
+- [x] Hw: 1
+- [x] Major Brand: qt
+- [x] Compatible Brands: qt
+- [x] Te Is Reencode: 1
+- [x] Creation Time: 2023-08-05T07:35:47Z
+- [ ] Video Frame Rate: 30
+- [ ] Next Track ID: 3

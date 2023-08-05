@@ -1,0 +1,81 @@
+ExifTool Version Number         : 12.64
+File Name                       : export_1691220947288.MOV
+Directory                       : .
+File Size                       : 4.7 MB
+File Modification Date/Time     : 2023:08:05 09:35:49+02:00
+File Access Date/Time           : 2023:08:05 09:35:49+02:00
+File Inode Change Date/Time     : 2023:08:05 09:36:03+02:00
+File Permissions                : -rw-r--r--
+File Type                       : MOV
+File Type Extension             : mov
+MIME Type                       : video/quicktime
+Media Data Size                 : 4700285
+Media Data Offset               : 36
+Movie Header Version            : 0
+Create Date                     : 2023:08:05 07:35:47
+Modify Date                     : 2023:08:05 07:35:47
+Time Scale                      : 1000
+Duration                        : 9.85 s
+Preferred Rate                  : 1
+Preferred Volume                : 100.00%
+Preview Time                    : 0 s
+Preview Duration                : 0 s
+Poster Time                     : 0 s
+Selection Time                  : 0 s
+Selection Duration              : 0 s
+Current Time                    : 0 s
+Next Track ID                   : 3
+Track Header Version            : 0
+Track Create Date               : 2023:08:05 07:35:47
+Track Modify Date               : 2023:08:05 07:35:47
+Track ID                        : 1
+Track Duration                  : 9.80 s
+Track Layer                     : 0
+Track Volume                    : 0.00%
+Image Width                     : 1080
+Image Height                    : 1920
+Graphics Mode                   : srcCopy
+Op Color                        : 0 0 0
+Compressor ID                   : hvc1
+Vendor ID                       : FFmpeg
+Source Image Width              : 1080
+Source Image Height             : 1920
+X Resolution                    : 72
+Y Resolution                    : 72
+Bit Depth                       : 24
+Video Frame Rate                : 30
+Matrix Structure                : 1 0 0 0 1 0 0 0 1
+Media Header Version            : 0
+Media Create Date               : 2023:08:05 07:35:47
+Media Modify Date               : 2023:08:05 07:35:47
+Media Time Scale                : 44100
+Media Duration                  : 9.85 s
+Balance                         : 0
+Handler Class                   : Data Handler
+Handler Description             : DataHandler
+Audio Format                    : mp4a
+Audio Bits Per Sample           : 16
+Audio Sample Rate               : 44100
+Purchase File Format            : mp4a
+Layout Flags                    : Stereo
+Audio Channels                  : 2
+Handler Type                    : Metadata Tags
+Moov Pos                        : 4700321
+Writer Type                     : -1
+Copyright                       : cb2e8b799d13edf6c2e5b21baa16c737
+Mdat Pos                        : 28
+Minor Version                   : 512
+Encoder                         : Lavf57.71.100
+Software                        : {"publicMode":"1","TEEditor":"2","isFastImport":"0","transType":"2","te_is_reencode":"1","source":"2"}
+Source                          : 2
+Hw                              : 1
+Bitrate                         : 5120000
+Major Brand                     : qt
+Maxrate                         : 0
+Compatible Brands               : qt
+Te Is Reencode                  : 1
+Creation Time                   : 2023-08-05T07:35:47Z
+Image Size                      : 1080x1920
+Megapixels                      : 2.1
+Avg Bitrate                     : 3.82 Mbps
+Rotation                        : 0

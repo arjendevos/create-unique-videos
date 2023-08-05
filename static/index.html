@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Video Upload Example</title>
+  </head>
+  <body>
+    <h1>Upload Videos</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input
+        type="file"
+        name="videos"
+        id="videoInput"
+        multiple
+        accept="video/mp4,video/x-m4v,video/*"
+      />
+      <label for="zoomFactor">Zoom Factor:</label>
+      <input
+        type="range"
+        id="zoomFactor"
+        name="zoomFactor"
+        min="1"
+        max="4"
+        step="0.01"
+        value="1"
+      />
+      <output id="zoomOutput">1</output>
+
+      <label for="trim">Trim by Seconds:</label>
+      <input
+        type="range"
+        id="trim"
+        name="trim"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+      />
+      <output id="trimOutput">1</output>
+      <br />
+      <button type="submit" id="uploadButton">Upload</button>
+    </form>
+
+    <style>
+      .loading {
+        cursor: wait;
+        pointer-events: none;
+      }
+    </style>
+
+    <div id="previewContainer"></div>
+
+    <script>
+      const videoInput = document.getElementById("videoInput");
+      const previewContainer = document.getElementById("previewContainer");
+      const zoomFactorSlider = document.getElementById("zoomFactor");
+      const trimSlider = document.getElementById("trim");
+      const zoomOutput = document.getElementById("zoomOutput");
+      const trimOutput = document.getElementById("trimOutput");
+      const uploadButton = document.getElementById("uploadButton");
+
+      zoomFactorSlider.addEventListener("input", function () {
+        zoomOutput.textContent = zoomFactorSlider.value;
+      });
+
+      trimSlider.addEventListener("input", function () {
+        trimOutput.textContent = trimSlider.value;
+      });
+
+      videoInput.addEventListener("change", function (event) {
+        previewContainer.innerHTML = ""; // Clear previous previews
+
+        const files = event.target.files;
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          const videoURL = URL.createObjectURL(file);
+
+          const videoElement = document.createElement("video");
+          videoElement.src = videoURL;
+          videoElement.controls = true;
+          videoElement.autoplay = false;
+          videoElement.loop = false;
+          videoElement.muted = true; // Mute the video to display as thumbnail
+          videoElement.style.margin = "10px";
+          videoElement.style.display = "none";
+          videoElement.style.width = "150px";
+          videoElement.style.height = "auto";
+          videoElement.addEventListener("loadedmetadata", function () {
+            // Capture the video thumbnail at 1-second mark
+            videoElement.currentTime = 1;
+          });
+          videoElement.addEventListener("seeked", function () {
+            const canvas = document.createElement("canvas");
+            canvas.width = videoElement.videoWidth;
+            canvas.height = videoElement.videoHeight;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+            const thumbnailURL = canvas.toDataURL();
+            const thumbnailImage = document.createElement("img");
+            thumbnailImage.src = thumbnailURL;
+            thumbnailImage.style.margin = "10px";
+            thumbnailImage.style.width = "150px";
+            thumbnailImage.style.height = "auto";
+            previewContainer.appendChild(thumbnailImage);
+          });
+
+          previewContainer.appendChild(videoElement);
+        }
+      });
+
+      document
+        .getElementById("uploadForm")
+        .addEventListener("submit", function (event) {
+          uploadButton.classList.add("loading");
+          event.preventDefault();
+          var formData = new FormData(event.target);
+          formData.append("zoomFactor", zoomFactorSlider.value);
+          formData.append("trim", trimSlider.value);
+          fetch("/upload", {
+            method: "POST",
+            body: formData,
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              alert(data.message);
+              previewContainer.innerHTML = ""; // Clear previews after successful upload
+              videoInput.value = ""; // Reset the input file element
+
+              // Display edited videos
+              const editedVideos = data.editedVideos;
+              for (let i = 0; i < editedVideos.length; i++) {
+                const videoURL = editedVideos[i];
+                const editedVideoElement = document.createElement("video");
+                editedVideoElement.src = videoURL;
+                editedVideoElement.controls = true;
+                editedVideoElement.style.margin = "10px";
+                editedVideoElement.style.width = "150px";
+                editedVideoElement.style.height = "auto";
+                document.body.appendChild(editedVideoElement);
+              }
+            })
+            .catch((error) => {
+              alert("Failed to upload videos.");
+              console.error("Error:", error);
+            })
+            .finally(() => {
+              uploadButton.classList.remove("loading");
+            });
+        });
+    </script>
+  </body>
+</html>
